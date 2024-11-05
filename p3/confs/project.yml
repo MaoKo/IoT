@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: development
+  namespace: argocd
+  labels:
+    app: achiu-au-app
+spec:
+  description: Development achiu-au iot
+  sourceRepos:
+  - "https://github.com/MaoKo/*"
+  destinations:
+  - namespace: dev
+    server: https://kubernetes.default.svc
